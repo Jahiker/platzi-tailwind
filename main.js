@@ -1,3 +1,7 @@
 import './style.css'
 
-console.log("Hola")
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelector('.loader').classList.remove('loading')
+})
+
+console.log("Happy Hacking!!!")

@@ -2,3 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+.Card {
+    @apply w-48 h-64 rounded-md shadow-md flex-none
+}
+
+.Card-image {
+    @apply w-full bg-cover rounded-t-lg h-3/5
+}
+
+.Card-info {
+    @apply w-full px-4 py-2 rounded-b-lg h-2/5
+}

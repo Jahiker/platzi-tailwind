@@ -2,8 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+.SectionTitle {
+    @apply text-3xl font-semibold text-primary
+}
+
 .Card {
-    @apply w-48 h-64 rounded-md shadow-md flex-none
+    @apply w-48 h-64 rounded-md shadow-md flex-none transform transition-all hover:-translate-y-4 hover:shadow-xl
 }
 
 .Card-image {
@@ -12,4 +16,13 @@
 
 .Card-info {
     @apply w-full px-4 py-2 rounded-b-lg h-2/5
+}
+
+.CardTrending {
+    background-attachment: fixed;
+    @apply w-full p-8 bg-cover rounded-xl h-96
+}
+
+.CardTitle {
+    @apply text-3xl pb-1 font-semibold text-white
 }

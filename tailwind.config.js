@@ -30,5 +30,10 @@ export default {
       }
     },
   },
-  plugins: [],
+  variants: {
+    width: ["responsive", "hover", "focus"]
+  },
+  plugins: [
+    require('tailwind-scrollbar')
+  ],
 };

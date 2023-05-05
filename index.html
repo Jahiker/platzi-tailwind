@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
@@ -73,7 +73,7 @@
 
     <title>PlatziTravel</title>
   </head>
-  <body>
+  <body class="font-Montserrat">
     <div class="hidden loader loading">
       <div class="lds-ripple">
         <div></div>
@@ -81,7 +81,6 @@
       </div>
     </div>
     <nav></nav>
-    <div id="tab_bar"></div>
     <section class="w-full h-screen">
       <div id="home">
         <div class="w-full h-3/4">
@@ -89,14 +88,15 @@
             class="absolute z-10 flex flex-col items-center w-full h-full p-4 space-y-96"
           >
             <input
-              class="p-3 rounded-full shadow-sm outline-none"
+              class="p-3 transition-all duration-500 ease-in-out rounded-full shadow-sm outline-none focus-within:shadow-sm focus:ring-2 focus:w-11/12"
               placeholder="San Francisco"
+              autocomplete="off"
               type="search"
-              name=""
-              id=""
+              name="search"
+              id="search"
             />
             <button
-              class="p-4 text-xl font-semibold bg-white rounded-full shadow-sm w-36 text-primary"
+              class="w-48 p-4 text-xl font-semibold transition-all duration-500 ease-in-out transform bg-white rounded-full shadow-sm text-primary hover:bg-primary hover:text-white hover:-translate-y-1 hover:scale-110"
             >
               Explorar
             </button>
@@ -107,10 +107,11 @@
         </div>
       </div>
       <div id="recomendadas" class="p-6">
+        <p class="SectionTitle">Our Recomendations</p>
 
-        <p class="text-3xl font-semibold text-primary">Our Recomendations</p>
-
-        <div class="flex items-center w-auto mt-6 space-x-4 overflow-x-auto h-72 overscroll-x-contain">
+        <div
+          class="flex items-center w-auto mt-6 space-x-4 overflow-x-auto overflow-y-hidden h-72 overscroll-x-contain scrollbar-thin"
+        >
           <div class="Card">
             <div class="Card-image bg-norway"></div>
             <div class="Card-info bg-secondary">
@@ -134,15 +135,131 @@
               <p class="text-sm text-white">A break from the world</p>
             </div>
           </div>
+
+          <div class="Card">
+            <div class="Card-image bg-seattle"></div>
+            <div class="Card-info">
+              <p class="text-xl font-bold text-tertiary">Seattle</p>
+              <p class="text-sm text-tertiary">Big City</p>
+            </div>
+          </div>
+
+          <div class="Card">
+            <div class="Card-image bg-switzerland"></div>
+            <div class="Card-info bg-secondary">
+              <p class="text-xl font-bold text-white">Switzerland</p>
+              <p class="text-sm text-white">Big City</p>
+            </div>
+          </div>
         </div>
-
-
-
       </div>
-      <div id="rentas_destacadas"></div>
-    </section>
-    <footer></footer>
 
+      <div id="rentas_destacadas w-full" class="p-6">
+        <p class="SectionTitle">Trending Stays</p>
+        <div
+          class="flex flex-col items-center justify-center w-full h-full mt-6 space-y-6"
+        >
+          <div class="CardTrending bg-chicago">
+            <p class="CardTitle">Chicago</p>
+            <p class="mr-24 text-sm text-white">
+              2 rooms, bathroom and kitchen.
+            </p>
+          </div>
+
+          <div class="CardTrending bg-LA">
+            <p class="CardTitle">Los Angeles</p>
+            <p class="mr-24 text-sm text-white">
+              4 rooms, 3 bathrooms, kitchen and private pool.
+            </p>
+          </div>
+
+          <div class="CardTrending bg-miami">
+            <p class="CardTitle">Miami</p>
+            <p class="mr-24 text-sm text-white">
+              3 rooms, 2 bathrooms, kitchen and amazing sea view.
+            </p>
+          </div>
+
+          <div class="CardTrending bg-bali">
+            <p class="CardTitle">Bali</p>
+            <p class="mr-24 text-sm text-white">
+              2 rooms, 2 bathrooms Kitchen and private pool
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-full h-auto p-6" id="faqs">
+        <p class="mt-6 SectionTitle">FAQs</p>
+        <div class="flex flex-col pt-6 space-y-4">
+          <div>
+            <p class="text-xl font-medium text-primary">Payment Methods</p>
+            <p class="mt-2 font-medium">
+              We accept VISA, MasterCard, American Express, Paypal and Binance,
+              We accept VISA, MasterCard, American Express, Paypal and Binance.
+            </p>
+          </div>
+
+          <div>
+            <p class="text-xl font-medium text-primary">Payment Methods</p>
+            <p class="mt-2 font-medium">
+              We accept VISA, MasterCard, American Express, Paypal and Binance,
+              We accept VISA, MasterCard, American Express, Paypal and Binance.
+            </p>
+          </div>
+
+          <div>
+            <p class="text-xl font-medium text-primary">Payment Methods</p>
+            <p class="mt-2 font-medium">
+              We accept VISA, MasterCard, American Express, Paypal and Binance,
+              We accept VISA, MasterCard, American Express, Paypal and Binance.
+            </p>
+          </div>
+
+          <div>
+            <p class="text-xl font-medium text-primary">Payment Methods</p>
+            <p class="mt-2 font-medium">
+              We accept VISA, MasterCard, American Express, Paypal and Binance,
+              We accept VISA, MasterCard, American Express, Paypal and Binance.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <footer class="w-full h-auto p-6 space-y-2 bg-gray-50">
+        <p class="text-lg text-gray-400">About Us</p>
+        <p class="text-sm text-gray-400">Investors</p>
+        <p class="text-sm text-gray-400">Jobs</p>
+        <p class="text-sm text-gray-400">Privacy policy</p>
+        <p class="text-sm text-gray-400">Terms and Conditions</p>
+        <p class="text-sm text-gray-400">Platzi Travel, inc</p>
+        <p class="text-sm text-gray-400">Follow Us</p>
+      </footer>
+    </section>
+    <div
+      id="tab_bar"
+      class="fixed bottom-0 flex items-center justify-center w-full p-6 space-x-8 bg-white shadow-lg lg:hidden"
+    >
+      <a href="#home" class="flex items-center justify-center h-[30px]">
+        <home-icon class="w-auto h-full"></home-icon>
+      </a>
+
+      <a href="#" class="flex items-center justify-center h-[30px]">
+        <home-icon class="w-auto h-full"></home-icon>
+      </a>
+
+      <a href="#" class="flex items-center justify-center h-[30px]">
+        <home-icon class="w-auto h-full"></home-icon>
+      </a>
+
+      <button class="flex items-center justify-center h-[30px]">
+        <dark-mode-icon class="w-auto h-full"><dark-mode-icon/>
+      </button>
+
+      <a href="#" class="flex items-center justify-center h-[30px]">
+        <home-icon class="w-auto h-full"></home-icon>
+      </a>
+    </div>
     <script src="./main.js" type="module"></script>
   </body>
 </html>

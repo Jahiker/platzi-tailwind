@@ -19,8 +19,7 @@
 }
 
 .CardTrending {
-    background-attachment: fixed;
-    @apply w-full p-8 bg-cover rounded-xl h-96
+    @apply w-full p-8 bg-cover bg-center rounded-xl h-96
 }
 
 .CardTitle {

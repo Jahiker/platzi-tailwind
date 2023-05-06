@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <!-- Google fonts -->
@@ -73,39 +73,78 @@
 
     <title>PlatziTravel</title>
   </head>
-  <body class="font-Montserrat">
+  <body class="font-Montserrat dark:bg-gray-800">
     <div class="hidden loader loading">
       <div class="lds-ripple">
         <div></div>
         <div></div>
       </div>
     </div>
-    <nav></nav>
-    <section class="w-full h-screen">
+
+    <nav class="fixed z-20 items-center justify-between hidden w-full h-16 p-6 bg-white lg:flex dark:bg-gray-700">
+      <div class="w-auto h-auto">
+        <p class="text-xl font-black text-primary">Plarzi Travel</p>
+      </div>
+      <div class="flex space-x-8 dark:text-white">
+        <a href="#home" class="font-bold text-md">Home</a>
+        <a href="#recomendadas" class="font-bold text-md">Recomendations</a>
+        <a href="#rentas_destacadas" class="font-bold text-md">Trending</a>
+        <a href="#faqs" class="font-bold text-md">FAQ's</a>
+      </div>
+      <div class="flex space-x-2">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-400">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+        </svg>
+
+        <theme-toggle>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+          </svg>
+        </theme-toggle>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-400">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+        </svg>
+      </div>
+    </nav>
+
+    <section class="w-full h-screen max-w-[1500px] mx-auto">
       <div id="home">
-        <div class="w-full h-3/4">
+        <div class="w-full lg:relative h-3/4">
           <div
-            class="absolute z-10 flex flex-col items-center w-full h-full p-4 space-y-96"
+            class="absolute z-10 flex flex-col items-center w-full h-full p-4 space-y-96 lg:space-y-0 lg:items-start lg:justify-start lg:pt-56"
           >
             <input
-              class="p-3 transition-all duration-500 ease-in-out rounded-full shadow-sm outline-none focus-within:shadow-sm focus:ring-2 focus:w-11/12"
+              class="p-3 transition-all duration-500 ease-in-out rounded-full shadow-sm outline-none focus-within:shadow-sm focus:ring-2 focus:w-11/12 lg:hidden"
               placeholder="San Francisco"
               autocomplete="off"
               type="search"
               name="search"
               id="search"
             />
+            <div class="hidden h-auto pb-6 lg:w-2/3 lg:flex lg:ml-16">
+              <p class="text-4xl font-bold text-black">
+                Find More Locations like this
+              </p>
+            </div>
             <button
-              class="w-48 p-4 text-xl font-semibold transition-all duration-500 ease-in-out transform bg-white rounded-full shadow-sm text-primary hover:bg-primary hover:text-white hover:-translate-y-1 hover:scale-110"
+              class="w-48 p-4 text-xl font-semibold transition-all duration-500 ease-in-out transform bg-white rounded-full shadow-sm text-primary hover:bg-primary hover:text-white hover:-translate-y-1 hover:scale-110 lg:ml-16"
             >
               Explorar
             </button>
           </div>
-          <div class="w-full h-full">
-            <img src="./img/sanFrancisco.jpg" alt="sanFrancisco" />
+          <div
+            class="w-full h-full lg:bg-cover lg:h-96 lg:bg-fixed lg:bg-center lg:bg-sanFranciscoDesktop"
+          >
+            <img
+              src="./img/sanFrancisco.jpg"
+              alt="sanFrancisco"
+              class="lg:hidden"
+            />
           </div>
         </div>
       </div>
+
       <div id="recomendadas" class="p-6">
         <p class="SectionTitle">Our Recomendations</p>
 
@@ -114,7 +153,7 @@
         >
           <div class="Card">
             <div class="Card-image bg-norway"></div>
-            <div class="Card-info bg-secondary">
+            <div class="Card-info bg-secondary dark:bg-gray-600">
               <p class="text-xl font-bold text-white">Norway</p>
               <p class="text-sm text-white">Beautiful landscapes</p>
             </div>
@@ -122,7 +161,7 @@
 
           <div class="Card">
             <div class="Card-image bg-new_york"></div>
-            <div class="Card-info">
+            <div class="Card-info dark:bg-gray-900">
               <p class="text-xl font-bold text-tertiary">New York</p>
               <p class="text-sm text-tertiary">Concrete jungle</p>
             </div>
@@ -130,7 +169,7 @@
 
           <div class="Card">
             <div class="Card-image bg-yosemite"></div>
-            <div class="Card-info bg-secondary">
+            <div class="Card-info bg-secondary dark:bg-gray-600">
               <p class="text-xl font-bold text-white">Yosemite</p>
               <p class="text-sm text-white">A break from the world</p>
             </div>
@@ -138,7 +177,7 @@
 
           <div class="Card">
             <div class="Card-image bg-seattle"></div>
-            <div class="Card-info">
+            <div class="Card-info dark:bg-gray-900">
               <p class="text-xl font-bold text-tertiary">Seattle</p>
               <p class="text-sm text-tertiary">Big City</p>
             </div>
@@ -146,7 +185,39 @@
 
           <div class="Card">
             <div class="Card-image bg-switzerland"></div>
-            <div class="Card-info bg-secondary">
+            <div class="Card-info bg-secondary dark:bg-gray-600">
+              <p class="text-xl font-bold text-white">Switzerland</p>
+              <p class="text-sm text-white">Big City</p>
+            </div>
+          </div>
+
+          <div class="Card">
+            <div class="Card-image bg-seattle"></div>
+            <div class="Card-info dark:bg-gray-900">
+              <p class="text-xl font-bold text-tertiary">Seattle</p>
+              <p class="text-sm text-tertiary">Big City</p>
+            </div>
+          </div>
+
+          <div class="Card">
+            <div class="Card-image bg-switzerland"></div>
+            <div class="Card-info bg-secondary dark:bg-gray-600">
+              <p class="text-xl font-bold text-white">Switzerland</p>
+              <p class="text-sm text-white">Big City</p>
+            </div>
+          </div>
+
+          <div class="Card">
+            <div class="Card-image bg-seattle"></div>
+            <div class="Card-info dark:bg-gray-900">
+              <p class="text-xl font-bold text-tertiary">Seattle</p>
+              <p class="text-sm text-tertiary">Big City</p>
+            </div>
+          </div>
+
+          <div class="Card">
+            <div class="Card-image bg-switzerland"></div>
+            <div class="Card-info bg-secondary dark:bg-gray-600">
               <p class="text-xl font-bold text-white">Switzerland</p>
               <p class="text-sm text-white">Big City</p>
             </div>
@@ -154,33 +225,33 @@
         </div>
       </div>
 
-      <div id="rentas_destacadas w-full" class="p-6">
+      <div id="rentas_destacadas" class="w-full p-6">
         <p class="SectionTitle">Trending Stays</p>
         <div
-          class="flex flex-col items-center justify-center w-full h-full mt-6 space-y-6"
+          class="flex flex-col items-center justify-center w-full h-full mt-6 space-y-6 lg:grid lg:grid-cols-3 lg:space-y-0 lg:gap-6"
         >
-          <div class="CardTrending bg-chicago">
+          <div class="CardTrending bg-chicago lg:col-span-3">
             <p class="CardTitle">Chicago</p>
             <p class="mr-24 text-sm text-white">
               2 rooms, bathroom and kitchen.
             </p>
           </div>
 
-          <div class="CardTrending bg-LA">
+          <div class="CardTrending bg-LA lg:row-span-2 lg:h-full">
             <p class="CardTitle">Los Angeles</p>
             <p class="mr-24 text-sm text-white">
               4 rooms, 3 bathrooms, kitchen and private pool.
             </p>
           </div>
 
-          <div class="CardTrending bg-miami">
+          <div class="CardTrending bg-miami lg:col-span-2">
             <p class="CardTitle">Miami</p>
             <p class="mr-24 text-sm text-white">
               3 rooms, 2 bathrooms, kitchen and amazing sea view.
             </p>
           </div>
 
-          <div class="CardTrending bg-bali">
+          <div class="CardTrending bg-bali lg:col-span-2">
             <p class="CardTitle">Bali</p>
             <p class="mr-24 text-sm text-white">
               2 rooms, 2 bathrooms Kitchen and private pool
@@ -194,7 +265,7 @@
         <div class="flex flex-col pt-6 space-y-4">
           <div>
             <p class="text-xl font-medium text-primary">Payment Methods</p>
-            <p class="mt-2 font-medium">
+            <p class="mt-2 font-medium dark:text-white">
               We accept VISA, MasterCard, American Express, Paypal and Binance,
               We accept VISA, MasterCard, American Express, Paypal and Binance.
             </p>
@@ -202,7 +273,7 @@
 
           <div>
             <p class="text-xl font-medium text-primary">Payment Methods</p>
-            <p class="mt-2 font-medium">
+            <p class="mt-2 font-medium dark:text-white">
               We accept VISA, MasterCard, American Express, Paypal and Binance,
               We accept VISA, MasterCard, American Express, Paypal and Binance.
             </p>
@@ -210,7 +281,7 @@
 
           <div>
             <p class="text-xl font-medium text-primary">Payment Methods</p>
-            <p class="mt-2 font-medium">
+            <p class="mt-2 font-medium dark:text-white">
               We accept VISA, MasterCard, American Express, Paypal and Binance,
               We accept VISA, MasterCard, American Express, Paypal and Binance.
             </p>
@@ -218,7 +289,7 @@
 
           <div>
             <p class="text-xl font-medium text-primary">Payment Methods</p>
-            <p class="mt-2 font-medium">
+            <p class="mt-2 font-medium dark:text-white">
               We accept VISA, MasterCard, American Express, Paypal and Binance,
               We accept VISA, MasterCard, American Express, Paypal and Binance.
             </p>
@@ -226,38 +297,106 @@
         </div>
       </div>
 
-      <footer class="w-full h-auto p-6 space-y-2 bg-gray-50">
-        <p class="text-lg text-gray-400">About Us</p>
-        <p class="text-sm text-gray-400">Investors</p>
-        <p class="text-sm text-gray-400">Jobs</p>
-        <p class="text-sm text-gray-400">Privacy policy</p>
-        <p class="text-sm text-gray-400">Terms and Conditions</p>
-        <p class="text-sm text-gray-400">Platzi Travel, inc</p>
-        <p class="text-sm text-gray-400">Follow Us</p>
+      <footer class="w-full h-auto p-6 pb-[90px] lg:pb-6 space-y-2 bg-gray-50 dark:bg-gray-700">
+        <p class="text-lg text-gray-400 cursor-pointer">About Us</p>
+        <p class="text-sm text-gray-400 cursor-pointer">Investors</p>
+        <p class="text-sm text-gray-400 cursor-pointer">Jobs</p>
+        <p class="text-sm text-gray-400 cursor-pointer">Privacy policy</p>
+        <p class="text-sm text-gray-400 cursor-pointer">Terms and Conditions</p>
+        <p class="text-sm text-gray-400 cursor-pointer">Platzi Travel, inc</p>
+        <p class="text-sm text-gray-400 cursor-pointer">Follow Us</p>
       </footer>
     </section>
     <div
       id="tab_bar"
-      class="fixed bottom-0 flex items-center justify-center w-full p-6 space-x-8 bg-white shadow-lg lg:hidden"
+      class="fixed bottom-0 z-20 flex items-center justify-center w-full p-6 space-x-8 bg-white shadow-lg lg:hidden dark:bg-gray-700"
     >
       <a href="#home" class="flex items-center justify-center h-[30px]">
-        <home-icon class="w-auto h-full"></home-icon>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6 text-gray-400"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+          />
+        </svg>
       </a>
 
-      <a href="#" class="flex items-center justify-center h-[30px]">
-        <home-icon class="w-auto h-full"></home-icon>
+      <a href="#recomendadas" class="flex items-center justify-center h-[30px]">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6 text-gray-400"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+          />
+        </svg>
       </a>
 
-      <a href="#" class="flex items-center justify-center h-[30px]">
-        <home-icon class="w-auto h-full"></home-icon>
+      <a
+        href="#rentas_destacadas"
+        class="flex items-center justify-center h-[30px]"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6 text-gray-400"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+          />
+        </svg>
       </a>
 
-      <button class="flex items-center justify-center h-[30px]">
-        <dark-mode-icon class="w-auto h-full"><dark-mode-icon/>
-      </button>
+      <theme-toggle class="flex items-center justify-center h-[30px]">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6 text-primary"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
+          />
+        </svg>
+      </theme-toggle>
 
       <a href="#" class="flex items-center justify-center h-[30px]">
-        <home-icon class="w-auto h-full"></home-icon>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6 text-gray-400"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+          />
+        </svg>
       </a>
     </div>
     <script src="./main.js" type="module"></script>

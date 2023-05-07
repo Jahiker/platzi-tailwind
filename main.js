@@ -27,6 +27,9 @@ class ThemeToggle extends HTMLElement {
   }
 
   toggle() {
+    console.log("Change Theme");
+    document.documentElement.classList.toggle("dark");
+
     if (
       localStorage.theme === "dark" ||
       (!("theme" in localStorage) &&
